@@ -42,10 +42,12 @@ You'll need an accessible Google Spreadsheet:
 
 The URL
 
-`https://docs.google.com/a/github.com/spreadsheet/ccc?key=0Ao5u1U6KYND7dGN5QngweVJUWE16bTRob0d2a3dCbnc#gid=0`
+``bash
+https://docs.google.com/a/github.com/spreadsheet/ccc?key=0Ao5u1U6KYND7dGN5QngweVJUWE16bTRob0d2a3dCbnc#gid=0
+```
 
 The Key
 
-`0Ao5u1U6KYND7dGN5QngweVJUWE16bTRob0d2a3dCbnc
+`0Ao5u1U6KYND7dGN5QngweVJUWE16bTRob0d2a3dCbnc`
 
 ![key](https://raw.github.com/jllord/sheetsee-cache/master/img/key.png)`
