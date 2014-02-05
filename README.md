@@ -42,7 +42,7 @@ You'll need an accessible Google Spreadsheet:
 
 The URL
 
-``bash
+```bash
 https://docs.google.com/a/github.com/spreadsheet/ccc?key=0Ao5u1U6KYND7dGN5QngweVJUWE16bTRob0d2a3dCbnc#gid=0
 ```
 
