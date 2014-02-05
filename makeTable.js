@@ -3,7 +3,6 @@ var csv = require('binary-csv')
 var concat = require('concat-stream')
 
 module.exports = function makeTable(KEY, callback) {
-  
   var base = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=' 
   var query = '&single=true&gid=0&output=csv'
   var URL = base + KEY + query
@@ -26,7 +25,7 @@ module.exports = function makeTable(KEY, callback) {
       var values = headers.map(function(h) { return row[h] })
       table += '|' + values.join('|') + '|\n'
     })
-    console.log(table)
+    return callback("null", table)
   }
 }
 
