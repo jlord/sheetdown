@@ -10,7 +10,7 @@ You'll need [Node.js](http://www.nodejs.org) (and [NPM](http://www.npmjs.org/she
 
 ```bash
 npm install -g sheetdown
-````
+```
 
 #### Make Tables
 
@@ -18,13 +18,13 @@ Prints to terminal:
 
 ```bash
 sheetdown SPREADSHEETKEY
-````
+```
 
 Copies:
 
 ```bash
 sheetdown SPREADSHEETKEY | pbcopy
-````
+```
 
 #### Save Table as Markdown file
 
@@ -32,7 +32,16 @@ It will save the file in the current working directory, so if you want it to be 
 
 ```bash
 sheetdown SPREADSHEETKEY --save
-````
+```
+
+#### To Build
+
+```bash
+git clone https://github.com/jlord/sheetdown.git
+cd sheetdown
+npm install
+```
+
 ### Get a Spreadsheet Key
 
 You'll need an accessible Google Spreadsheet:
