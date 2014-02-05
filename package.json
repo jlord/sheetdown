@@ -1,6 +1,6 @@
 {
   "name": "sheetdown",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Convert a Google Spreadsheet into a table in Markdown",
   "main": "index.js",
   "scripts": {
