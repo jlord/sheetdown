@@ -33,4 +33,19 @@ It will save the file in the current working directory, so if you want it to be 
 ```bash
 sheetdown SPREADSHEETKEY --save
 ````
+### Get a Spreadsheet Key
 
+You'll need an accessible Google Spreadsheet:
+
+- From your Google Spreadsheet click File > Publish to Web (this makes it so the data can be fetched). Click Start Publishing.
+- It will return a url in the dialogue box, copy the portion that is your key.
+
+The URL
+
+`https://docs.google.com/a/github.com/spreadsheet/ccc?key=0Ao5u1U6KYND7dGN5QngweVJUWE16bTRob0d2a3dCbnc#gid=0`
+
+The Key
+
+`0Ao5u1U6KYND7dGN5QngweVJUWE16bTRob0d2a3dCbnc
+
+![key](https://raw.github.com/jllord/sheetsee-cache/master/img/key.png)`
