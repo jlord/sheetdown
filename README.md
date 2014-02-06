@@ -17,13 +17,15 @@ npm install -g sheetdown
 Prints to terminal:
 
 ```bash
-sheetdown SPREADSHEETKEY
+sheetdown SPREADSHEET
 ```
+
+Where `SPREADSHEET` is either a full Google Docs/Drive URL or just the key portion (see below).
 
 Copies:
 
 ```bash
-sheetdown SPREADSHEETKEY | pbcopy
+sheetdown SPREADSHEET | pbcopy
 ```
 
 #### Save Table as Markdown file
@@ -31,7 +33,7 @@ sheetdown SPREADSHEETKEY | pbcopy
 It will save the file in the current working directory, so if you want it to be somewhere specific, navigate yourself there.
 
 ```bash
-sheetdown SPREADSHEETKEY --save
+sheetdown SPREADSHEET --save
 ```
 
 #### To Build
