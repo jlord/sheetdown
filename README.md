@@ -16,16 +16,18 @@ npm install -g sheetdown
 
 #### Make Tables
 
+You can use your Spreadsheet key _or_ the spreadsheet URL (see below)
+
 Prints to terminal:
 
 ```bash
-sheetdown SPREADSHEETKEY
+sheetdown SPREADSHEET
 ```
 
 Copies the output (and then you can paste it):
 
 ```bash
-sheetdown SPREADSHEETKEY | pbcopy
+sheetdown SPREADSHEET | pbcopy
 ```
 
 #### Save Table as Markdown file
@@ -33,7 +35,7 @@ sheetdown SPREADSHEETKEY | pbcopy
 It will save the file in the current working directory, so if you want it to be somewhere specific, navigate yourself there in your terminal.
 
 ```bash
-sheetdown SPREADSHEETKEY --save
+sheetdown SPREADSHEET --save
 ```
 
 #### To Build
@@ -44,7 +46,7 @@ cd sheetdown
 npm install
 ```
 
-### Get a Spreadsheet Key
+### Get a Spreadsheet Key/URL
 
 You'll need an accessible Google Spreadsheet:
 
