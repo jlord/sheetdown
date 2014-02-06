@@ -4,6 +4,12 @@ var makeTable = require('./makeTable.js')
 var fs = require('fs')
 
 var KEY = process.argv[2]
+if (KEY.toLowerCase().indexOf("key=") > 0 ) {
+  var re = /key=([a-zA-Z0-9+]+)/;
+  var VAL = KEY.match(re);
+  KEY = VAL;
+}
+
 var save = false
 
 if (process.argv[3] && process.argv[3].match("--save")) {
