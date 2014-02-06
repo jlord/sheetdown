@@ -4,9 +4,11 @@ Convert a Google Spreadsheet into a table in Markdown. A [node.js](http://www.no
 
 ## To Use
 
-You'll need [Node.js](http://www.nodejs.org) (and [NPM](http://www.npmjs.org/sheetdown), which in most comes with Node.js).
+You'll need [Node.js](http://www.nodejs.org) (and [NPM](http://www.npmjs.org/sheetdown), which in most comes bundled with Node.js). To get Node.js (for running JavaScript on servers (and in this case your computer is one)), go to [nodejs.org](http://www.nodejs.org) and click the icon that corresponds to your operating system. Install. When it's done, open Terminal (in Mac) or Command Prompt (Win) and proceed:
 
-#### Install
+#### Install sheetdown
+
+Globally `-g` install it so that you can use it anywhere.
 
 ```bash
 npm install -g sheetdown
@@ -20,7 +22,7 @@ Prints to terminal:
 sheetdown SPREADSHEETKEY
 ```
 
-Copies:
+Copies the output (and then you can paste it):
 
 ```bash
 sheetdown SPREADSHEETKEY | pbcopy
@@ -28,7 +30,7 @@ sheetdown SPREADSHEETKEY | pbcopy
 
 #### Save Table as Markdown file
 
-It will save the file in the current working directory, so if you want it to be somewhere specific, navigate yourself there.
+It will save the file in the current working directory, so if you want it to be somewhere specific, navigate yourself there in your terminal.
 
 ```bash
 sheetdown SPREADSHEETKEY --save
