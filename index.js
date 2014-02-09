@@ -32,6 +32,7 @@ if (KEY && save) {
     fs.writeFile('table.md', table.toString(), function (err) {
       if (err) return console.log(err)
     })
+    console.log('table has been created and saved')
   })
 }
 
