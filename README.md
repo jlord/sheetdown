@@ -16,18 +16,18 @@ npm install -g sheetdown
 
 #### Make Tables
 
-You can use your Spreadsheet key _or_ the spreadsheet URL (see below)
+Use your Spreadsheet key (see below)
 
 Prints to terminal:
 
 ```bash
-sheetdown SPREADSHEET
+sheetdown SPREADSHEETKEY
 ```
 
 Copies the output (and then you can paste it):
 
 ```bash
-sheetdown SPREADSHEET | pbcopy
+sheetdown SPREADSHEETKEY | pbcopy
 ```
 
 #### Save Table as Markdown file
@@ -35,7 +35,7 @@ sheetdown SPREADSHEET | pbcopy
 It will save the file in the current working directory, so if you want it to be somewhere specific, navigate yourself there in your terminal.
 
 ```bash
-sheetdown SPREADSHEET --save
+sheetdown SPREADSHEETKEY --save
 ```
 
 #### To Build
@@ -46,9 +46,9 @@ cd sheetdown
 npm install
 ```
 
-### Get a Spreadsheet Key/URL
+### Get a Spreadsheet Key
 
-You'll need an accessible Google Spreadsheet:
+You'll need an accessible* Google Spreadsheet:
 
 - From your Google Spreadsheet click File > Publish to Web (this makes it so the data can be fetched). Click Start Publishing.
 - It will return a url in the dialogue box, copy the portion that is your key.
@@ -61,6 +61,10 @@ https://docs.google.com/a/github.com/spreadsheet/ccc?key=0Ao5u1U6KYND7dGN5QngweV
 
 The Key
 
-`0Ao5u1U6KYND7dGN5QngweVJUWE16bTRob0d2a3dCbnc`
+```bash
+0Ao5u1U6KYND7dGN5QngweVJUWE16bTRob0d2a3dCbnc`
+```
 
-![key](https://raw.github.com/jllord/sheetsee-cache/master/img/key.png)`
+![key](https://raw.github.com/jllord/sheetsee-cache/master/img/key.png)
+
+*Accessible Google Spreadsheets are those with Share settings set to either 'Public on the Web' or 'Anyone who has the link can view'. Spreadsheets set to 'Shared Private' cannot be reached because they're private, so they won't work.
