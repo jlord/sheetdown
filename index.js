@@ -13,7 +13,7 @@ if (process.argv[3] && process.argv[3].match("--save")) {
 
 if (key && !save) {
   makeTable(key, function callback(err, table) {
-    if (err != "null") return console.log(err)
+    if (err != "null") return console.error(err)
 
     console.log(table)
   })
@@ -21,10 +21,10 @@ if (key && !save) {
 
 if (key && save) {
   makeTable(key, function callback(err, table) {
-    if (err != "null") return console.log(err)
+    if (err != "null") return console.error(err)
 
     fs.writeFile('table.md', table.toString(), function (err) {
-      if (err) return console.log(err)
+      if (err) return console.error(err)
     })
     console.log('table has been created and saved')
   })
