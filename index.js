@@ -23,6 +23,7 @@ makeTable(key, function callback(err, table) {
 
   fs.writeFile('table.md', table.toString(), function (err) {
     if (err) return console.error(err)
+
+    console.log('table has been created and saved')
   })
-  console.log('table has been created and saved')
 })
