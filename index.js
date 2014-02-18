@@ -17,7 +17,7 @@ if (!key) {
 }
 
 makeTable(key, function callback(err, table) {
-  if (err != "null") return console.error(err)
+  if (err != "null") return showError(err)
 
   if (!save) return console.log(table)
 
@@ -27,3 +27,9 @@ makeTable(key, function callback(err, table) {
     console.log('table has been created and saved')
   })
 })
+
+function showError(err) {
+  console.error(err)
+  console.error('1. Are you sure this spreadsheet is publicly available, or available to all people with the link? You can change this in "Share settings".')
+  console.error('2. Are you sure this spreadsheet is “published to the web”? Click "File" > "Publish to Web" to allow for machine fetches.')
+}
