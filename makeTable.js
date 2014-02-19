@@ -12,6 +12,9 @@ module.exports = function makeTable(key, callback) {
   request(URL).pipe(csvParser).pipe(concat(rows))
   
   function rows(data) {
+    if (! data[0])
+      return callback(new Error('No data found'))
+
     var table = '|'
     var headers = Object.keys(data[0])
     var underHeaders = ''
