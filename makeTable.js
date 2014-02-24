@@ -9,24 +9,21 @@ module.exports = function makeTable(key, callback) {
 
   var csvParser = csv({json: true})
 
-  request(URL, function(error, response, body) {
-    // console.log("stat", response.statusCode)
+  var req = request(URL)
+
+  req.on('response', function (response){
     if (response.statusCode.toString() === "404") {
-      // console.log("FOUR OH FOUR")
-      body = ""
       return callback(new Error("Spreadsheet not found.\n"
         + "Please double check your spreadsheet key is correct."))
     }
     if (response.req._header.match('ServiceLogin?')) {
-      body = ""
       return callback(new Error("Cannot access spreadsheet.\n"
         + "Be sure you 'Publish to the Web' and turn the share settings to public on your spreadsheet."))
     }
-  }).pipe(csvParser).pipe(concat(rows))
+    req.pipe(csvParser).pipe(concat(rows))
+  })
 
   function rows(data) {
-    console.log("Data", data)
-    if (data.toString() === "" || data.toString().match("<!DOCTYPE html>")) return
     var table = '|'
     var headers = Object.keys(data[0])
     var underHeaders = ''
