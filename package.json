@@ -19,8 +19,9 @@
   "author": "Jessica Lord",
   "license": "BSD-2-Clause",
   "dependencies": {
-    "request": "~2.33.0",
     "binary-csv": "~0.1.7",
-    "concat-stream": "~1.4.1"
+    "concat-stream": "~1.4.1",
+    "google-spreadsheets-key-parser": "^1.1.0",
+    "request": "~2.33.0"
   }
 }
