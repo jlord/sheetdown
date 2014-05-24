@@ -3,20 +3,17 @@ var csv = require('binary-csv')
 var concat = require('concat-stream')
 var parser = require('google-spreadsheets-key-parser')
 
-
-// returns:
-// { key: '1jHY4wO4b0kuX4rVnJgZGwfQUzoxado52k1hzxdUY-AM',
-//  isNewSheets: true }
-
-module.exports = function makeTable(key, callback) {
+module.exports = function makeTable(fullURL, callback) {
   var newBase = 'https://docs.google.com/spreadsheets/d/'
   var newQuery = '/export?gid=0&format=csv'
   var oldBase = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key='
   var oldQuery = '&single=true&gid=0&output=csv'
 
   var formattedURL = ''
-
-  var parsed = parser(URL)
+  var parsed = parser(fullURL)
+  // returns:
+  // { key: '',
+  //  isNewSheets: true }
 
   if (parsed.isNewSheets) {
     formattedURL = newBase + parsed.key + newQuery
@@ -24,14 +21,10 @@ module.exports = function makeTable(key, callback) {
     formattedURL = oldBase + parsed.key + oldQuery
   }
 
-  console.log('URL', URL)
-// https://docs.google.com/spreadsheets/d/10z-2P8l88hLF35EodIjigs5cyCD7BtmfZS631JMtIUU/export?gid=0&format=csv
-// https://docs.google.com/spreadsheets/d/1jHY4wO4b0kuX4rVnJgZGwfQUzoxado52k1hzxdUY-AM/export?gid=0&format=csv
-  // https://docs.google.com/spreadsheet/d/1jHY4wO4b0kuX4rVnJgZGwfQUzoxado52k1hzxdUY-AM/export?gid=0&format=csv
-// /export?gid=0&format=csv
+  // new url https://docs.google.com/spreadsheets/d/1jHY4wO4b0kuX4rVnJgZGwfQUzoxado52k1hzxdUY-AM/edit#gid=0
+  // old url https://docs.google.com/spreadsheet/ccc?key=0AuOjlXjUrSbAdE1XRFJkeEJZQ1NSelhILUR0NXdBWUE#gid=0
 
   var csvParser = csv({json: true})
-
   var req = request(formattedURL)
 
   req.on('response', function (response){
