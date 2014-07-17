@@ -21,9 +21,6 @@ module.exports = function makeTable(fullURL, callback) {
     formattedURL = oldBase + parsed.key + oldQuery
   }
 
-  // new url https://docs.google.com/spreadsheets/d/1jHY4wO4b0kuX4rVnJgZGwfQUzoxado52k1hzxdUY-AM/edit#gid=0
-  // old url https://docs.google.com/spreadsheet/ccc?key=0AuOjlXjUrSbAdE1XRFJkeEJZQ1NSelhILUR0NXdBWUE#gid=0
-
   var csvParser = csv({json: true})
   var req = request(formattedURL)
 
