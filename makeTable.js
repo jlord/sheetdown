@@ -3,8 +3,15 @@ var csv = require('binary-csv')
 var concat = require('concat-stream')
 var parser = require('google-spreadsheets-key-parser')
 var markdownify = require('to-markdown')
+var fs = require('fs')
 
-module.exports = function makeTable(fullURL, callback) {
+module.exports = function makeTable (fullURL, callback) {
+  var csvParser = csv({json: true})
+  if (!fullURL.match('http')) {
+    // using a local file for testing
+    var csvFile = fs.createReadStream(fullURL)
+    return csvFile.pipe(csvParser).pipe(concat(rows))
+  }
   var newBase = 'https://docs.google.com/spreadsheets/d/'
   var newQuery = '/export?gid=0&format=csv'
   var oldBase = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key='
@@ -22,7 +29,6 @@ module.exports = function makeTable(fullURL, callback) {
     formattedURL = oldBase + parsed.key + oldQuery
   }
 
-  var csvParser = csv({json: true})
   var req = request(formattedURL)
 
   req.on('response', function (response){
