@@ -42,8 +42,7 @@ module.exports = function makeTable(fullURL, callback) {
     var headers = Object.keys(data[0])
     var underHeaders = ''
     headers.map(function(key) {
-      markdownFormat(key)
-      table += key + '|'
+      table += marked(key) + '|'
       underHeaders += ' ------ |'
     })
 
@@ -54,8 +53,4 @@ module.exports = function makeTable(fullURL, callback) {
     })
     return callback("null", table)
   }
-}
-
-function formatMarkdown(string) {
-
 }
