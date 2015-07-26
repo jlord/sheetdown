@@ -4,7 +4,7 @@
   "description": "Convert a Google Spreadsheet into a table in Markdown",
   "main": "index.js",
   "scripts": {
-    "test": ""
+    "test": "standard && tape ./test/index.js | tap-spec"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,11 @@
     "concat-stream": "~1.4.1",
     "google-spreadsheets-key-parser": "^1.1.0",
     "request": "~2.33.0",
-    "tape": "^4.0.1",
     "to-markdown": "^1.2.1"
+  },
+  "devDependencies": {
+    "standard": "^4.5.4",
+    "tap-spec": "^4.0.2",
+    "tape": "^4.0.1"
   }
 }
