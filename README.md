@@ -1,5 +1,8 @@
 # sheetdown
 
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
+[![travis](https://travis-ci.org/jlord/sheetdown.svg)](https://travis-ci.org/jlord/sheetdown)
+
 Convert a Google Spreadsheet into a table in Markdown. A [node.js](http://www.nodejs.org) module, available here and [NPM](http://www.npmjs.org/sheetdown).
 
 _Works with both old and new Google Spreadsheets._
