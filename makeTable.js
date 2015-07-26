@@ -2,7 +2,7 @@ var request = require('request')
 var csv = require('binary-csv')
 var concat = require('concat-stream')
 var parser = require('google-spreadsheets-key-parser')
-var marked = require('marked')
+var markdownify = require('to-markdown')
 
 module.exports = function makeTable(fullURL, callback) {
   var newBase = 'https://docs.google.com/spreadsheets/d/'
@@ -42,13 +42,15 @@ module.exports = function makeTable(fullURL, callback) {
     var headers = Object.keys(data[0])
     var underHeaders = ''
     headers.map(function(key) {
-      table += marked(key) + '|'
+      table += key + '|'
       underHeaders += ' ------ |'
     })
 
     table += '\n|' + underHeaders + '\n'
     data.map(function(row) {
-      var values = headers.map(function(h) { return row[h] })
+      var values = headers.map(function(h) {
+        return markdownify(row[h])
+      })
       table += '|' + values.join('|') + '|\n'
     })
     return callback("null", table)

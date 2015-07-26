@@ -22,7 +22,8 @@
     "binary-csv": "~0.1.7",
     "concat-stream": "~1.4.1",
     "google-spreadsheets-key-parser": "^1.1.0",
-    "marked": "^0.3.3",
-    "request": "~2.33.0"
+    "request": "~2.33.0",
+    "tape": "^4.0.1",
+    "to-markdown": "^1.2.1"
   }
 }
